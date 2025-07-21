@@ -1,0 +1,150 @@
+body {
+    font-family: sans-serif;
+    max-width: 1080px;
+    margin: auto;
+    background-color: #131313;
+    color: #717171;
+    padding: 20px;
+}
+h1 {
+    font-size: 50px;
+    margin-bottom: 0;
+}
+.prod-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.main-info {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    justify-content: space-between;
+}
+.offer-img {
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.reviews-columns-wrapper {
+    text-align: center
+}
+.reviews-columns {
+    column-gap: 20px;
+    column-width: 320px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.review {
+    display: inline-block;
+    background-color: #1e1e1e;
+    width: 320px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.review-header {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+.review-rating {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.rating-distribution {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.rating-counter {
+    font-size: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.rating-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.rating-box {
+    display: flex;
+    gap: 50px;
+}
+
+.stars {
+    display: flex;
+    width: 115px;
+    text-align: right;
+    margin-right: 10px;
+    color: #ccc;
+    justify-content: flex-end;
+}
+
+.bar-container {
+    width: 400px;
+}
+
+.bar {
+    width: 100%;
+    background-color: #333;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background-color: #aaa;
+    border-radius: 3px;
+}
+@media (max-width: 1080px) {
+
+}
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+    .main-info {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .offer-img {
+        width: 300px;
+    }
+    .rating-box {
+        gap: 0;
+    }
+    .bar-container {
+        width: 150px;
+    }
+    .reviews-columns {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .review {
+        width: 250px;
+    }
+}

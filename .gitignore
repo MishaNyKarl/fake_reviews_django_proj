@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+*.sqlite3
+*.log
+*.pot
+*.py~
+.DS_Store
+*.mo
+*.po~
+.env
+staticfiles/
+media/
