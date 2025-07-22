@@ -22,20 +22,26 @@ def estimate_rating_distribution(avg_rating, total_votes):
     def adjust_to_average(base, target_avg):
         max_iters = 1000
         for _ in range(max_iters):
-            # Среднее по текущему распределению
             avg = sum(star * weight for star, weight in base.items())
             diff = target_avg - avg
 
             if abs(diff) < 0.001:
                 break
 
-            # Поправим: больше пятёрок — выше рейтинг
+            # Поправка только если безопасно
             if diff > 0:
-                base[5] += 0.01
-                base[4] -= 0.01
+                if base[4] >= 0.01:
+                    base[5] += 0.01
+                    base[4] -= 0.01
             else:
-                base[5] -= 0.01
-                base[4] += 0.01
+                if base[5] >= 0.01:
+                    base[5] -= 0.01
+                    base[4] += 0.01
+
+        # Обрезаем отрицательные значения (на всякий случай)
+        for k in base:
+            if base[k] < 0:
+                base[k] = 0
 
         total = sum(base.values())
         return {k: v / total for k, v in base.items()}

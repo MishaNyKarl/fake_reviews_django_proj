@@ -34,7 +34,7 @@
                                 <div class="bar">
                                     {% for row in distribution_rows %}
                                         {% if row.stars == stars %}
-                                            <div class="bar-fill" style="width: {{ row.percent }}%;"></div>
+                                            <div class="bar-fill" style='width: {{ row.percent|stringformat:"f" }}%;'></div>
                                         {% endif %}
                                     {% endfor %}
                                 </div>
