@@ -69,8 +69,8 @@ def offer_detail(request, slug):
 
     for r in reviews:
         translated_reviews.append({
-            "name": r.name,
-            "avatar": r.avatar,
+            "name": r.get_translated_name(lang),
+            "avatar": r.get_translated_avatar(lang),
             "rating": r.rating,
             "date": r.date,
             "text": r.get_translated_text(lang)

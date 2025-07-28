@@ -15,4 +15,4 @@ class OfferAdmin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('name', 'offer', 'rating', 'date')
+    list_display = ('name_en', 'offer', 'rating', 'date')
