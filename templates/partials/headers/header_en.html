@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AfriReview</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #131313;;
+      color: white;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      color: #717171;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header-menu {
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: #717171;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #34495e;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .auth-buttons a {
+      background-color: #717171;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #d35400;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .header-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="logo">🌍 AfriReview</div>
+    <div class="tagline">Real People. Real Reviews. Africa’s Voice Matters.</div>
+  </div>
+
+  <nav class="header-menu">
+    <a href="#">🔍 Search</a>
+    <a href="#">📝 Write a Review</a>
+    <a href="#">⭐ Top Rated</a>
+    <a href="#">📱 Get the App</a>
+    <a href="#">📂 Categories</a>
+    <a href="#">ℹ️ About Us</a>
+  </nav>
+
+  <div class="auth-buttons">
+    <a href="#">Sign In</a>
+    <a href="#">Join</a>
+  </div>
+</header>
+
+</body>
+</html>

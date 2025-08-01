@@ -1,6 +1,15 @@
 {% load static %}
 {% load i18n %}
 {% get_current_language as lang %}
+{% if lang == 'fr' %}
+    {% include "partials/headers/header_en.html" %}
+{% elif lang == 'el' %}
+    {% include "partials/headers/header_el.html" %}
+{% elif lang == 'es' %}
+    {% include "partials/headers/header_es.html" %}
+{% else %}
+    {% include "partials/headers/header_en.html" %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +25,11 @@
     <div class="main-info">
 
         <div class="rating-box">
-            <div class="rating-counter">{{ offer.rating }}</div>
+            <div class="rating-counter">{{ offer.rating }}
+                <div class="offer-votes_count-mobile">
+                    {{ offer.votes_count }} {% blocktrans %}reviews{% endblocktrans %}
+                </div>
+            </div>
             <div class="rating-info">
                 <div class="rating-distribution">
                     {% for stars in "54321" %}
@@ -43,7 +56,9 @@
                         </div>
                     {% endfor %}
                 </div>
-                {{ offer.votes_count }} {% blocktrans %}reviews{% endblocktrans %}
+                <div class="offer-votes_count">
+                    {{ offer.votes_count }} {% blocktrans %}reviews{% endblocktrans %}
+                </div>
             </div>
         </div>
 
@@ -52,6 +67,8 @@
         </div>
 
     </div>
+
+    <div class="prod-description">{{ offer_description }}</div>
 
 
     <h2>{% trans "Reviews" %}</h2>

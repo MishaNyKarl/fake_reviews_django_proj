@@ -85,6 +85,8 @@ def offer_detail(request, slug):
 
     return render(request, 'offers/html/offer_detail.html', {
         'offer': offer,
+        'offer_description': offer.get_translated_description(lang),
         'reviews': translated_reviews,
         'distribution_rows': distribution_rows,
+        'lang': lang,
     })

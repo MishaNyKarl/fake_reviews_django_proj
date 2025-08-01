@@ -8,6 +8,14 @@ class Offer(models.Model):
     rating = models.FloatField(default=4.9)
     votes_count = models.PositiveIntegerField(default=0)
 
+    description_en = models.TextField("Description (English)")
+    description_fr = models.TextField("Description (French)", blank=True, null=True)
+    description_el = models.TextField("Description (Greek)", blank=True, null=True)
+    description_es = models.TextField("Description (Spanish)", blank=True, null=True)
+
+    def get_translated_description(self, lang_code):
+        return getattr(self, f"description_{lang_code}", None) or self.description_en
+
     def __str__(self):
         return self.name
 
